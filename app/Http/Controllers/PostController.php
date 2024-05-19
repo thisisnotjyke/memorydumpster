@@ -34,7 +34,7 @@ class PostController extends Controller
         }
 
         $post->save();
-        session()->flash('notif.success', 'Post created successfully!');
+        session()->flash('notif.success', 'Memory created successfully!');
         return redirect()->route('posts.index');
     }
 
@@ -59,7 +59,7 @@ class PostController extends Controller
         }
 
         $post->update($validated);
-        session()->flash('notif.success', 'Post updated successfully!');
+        session()->flash('notif.success', 'Memory updated successfully!');
         return redirect()->route('posts.index');
     }
 
@@ -67,7 +67,7 @@ class PostController extends Controller
     {
         Storage::disk('public')->delete($post->featured_image);
         $post->delete();
-        session()->flash('notif.success', 'Post deleted successfully!');
+        session()->flash('notif.success', 'Memory deleted successfully!');
         return redirect()->route('posts.index');
     }
 }
